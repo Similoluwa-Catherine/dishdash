@@ -39,7 +39,7 @@ const Header = () => {
     <div>
     {openCart}
       <header className="d-flex justify-content-between py-3 px-lg-5 px-4 shadow-sm">
-        <h1 className="fs-3 fw-bold pt-1">BuyFood</h1>
+        <h1 className="fs-3 fw-bold pt-1">DishDash</h1>
         <button className={`cart-btn ${btnIsHighlighted ? "bump" : ""}`} onClick={cart}>
           <img src={cartIcon} alt="cart" className="cart" />
           <span className="badge ms-2">{cartItems}</span>
