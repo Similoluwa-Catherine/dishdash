@@ -40,7 +40,8 @@ const Cart = ({ onchange }) => {
         </div>
         <Modal.Body>
           <div className="modal-body">
-            <ul className="cart-items">
+           {hasItems ? <div>
+           <ul className="cart-items">
               {cartCtx.items.map((item) => (
                 <li
                   key={item.id}
@@ -70,6 +71,7 @@ const Cart = ({ onchange }) => {
               </button>
               {hasItems && <button className="order-btn">Order</button>}
             </div>
+           </div> : <p className="text-center fs-5">Cart is empty</p>}
           </div>
         </Modal.Body>
       </Modal>
