@@ -164,7 +164,6 @@ header {
     color: hsl(0, 17%, 37%);
     padding: 0.5rem 1.3rem;
     border-radius: 25px;
-    margin-left: 1rem;
   }
   
   .close-btn:hover,
@@ -172,6 +171,23 @@ header {
     background-color: hsl(0, 20%, 28%);
     color: hsl(0, 0%, 100%);
   }
+
+  /* .close-feedback {
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid hsl(0, 17%, 37%);
+    color: hsl(0, 17%, 37%);
+    padding: 0.5rem 1.3rem;
+    border-radius: 25px;
+  }
+  
+  .close-feedback:hover,
+  .close-feedback:active {
+    background-color: hsl(0, 20%, 28%);
+    color: hsl(0, 0%, 100%);
+  } */
 
   .order-btn {
     background-color: hsl(0, 17%, 37%);
