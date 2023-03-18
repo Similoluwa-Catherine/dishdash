@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 
 const MealItemForm = (props) => {
-  const [amount, setAmount] = useState("");
-  const [amountIsValid, setAmountIsValid] = useState(true);
+  const [quantity, setQuantity] = useState("");
+  const [quantityIsValid, setQuantityIsValid] = useState(true);
 
 
   const preventPasteNegative = (e) => {
@@ -19,38 +19,40 @@ const MealItemForm = (props) => {
     }
   };
 
-  const amountInputRef = useRef();
+  const quantityInputRef = useRef();
 
   const addMealHandler = event => {
     event.preventDefault();
-    const enteredAmount =  amountInputRef.current.value;
-    const enteredAmountNumber = +enteredAmount;
+    const enteredQuantity =  quantityInputRef.current.value;
+    const enteredQuantityNumber = +enteredQuantity;
 
-    if (enteredAmount.trim().length === 0 || enteredAmountNumber < 1) {
-      setAmountIsValid(false);
+    if (enteredQuantity.trim().length === 0 || enteredQuantityNumber < 1) {
+      setQuantityIsValid(false);
       return;
+    } else {
+      setQuantityIsValid(true);
     }
 
-    props.onAddToCart(enteredAmountNumber);
-    setAmount("");
+    props.onAddToCart(enteredQuantityNumber);
+    setQuantity("");
   };
 
   return (
     <div className="mt-lg-0 mt-3">
       <form className="d-flex align-items-center mb-1">
-        <label className="form-label fw-bold me-3 mt-1">Amount</label>
+        <label className="form-label fw-bold me-3 mt-1">Quantity</label>
         <input
-          ref={amountInputRef}
-          id= "amount_ + props.id"
+          ref={quantityInputRef}
+          id= "quantity_ + props.id"
           type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
           onPaste={preventPasteNegative}
           onKeyPress={preventMinus}
           className="input"
         />
       </form>
-      {!amountIsValid && <p className="text-danger fst-italic">Please enter a valid amount</p>}
+      {!quantityIsValid ? <p className="text-danger fst-italic">Please enter a valid quantity</p> : "" }
       <button className="add-btn w-100" onClick={addMealHandler}>+ Add</button>
     </div>
   );

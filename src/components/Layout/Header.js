@@ -14,7 +14,7 @@ const Header = () => {
   const { items } = cartContx; //object destructuring, pulling out items from the cart context
 
   const cartItems = items.reduce((currentNumber, item) => {
-    return currentNumber + item.amount;
+    return currentNumber + item.quantity;
   }, 0);
 
   const openCart = createRender ?

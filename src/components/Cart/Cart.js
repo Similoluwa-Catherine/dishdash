@@ -19,7 +19,7 @@ const Cart = ({ onchange }) => {
   const hasItems = cartCtx.items.length > 0;
 
   const addCartItem = (item) => {
-    cartCtx.addItem({ ...item, amount: 1 });
+    cartCtx.addItem({ ...item, quantity: 1 });
   };
 
   const removeCartItem = (id) => {
@@ -111,7 +111,7 @@ const Cart = ({ onchange }) => {
                           <h2 className="fs-5 fw-bold">{item.name}</h2>
                           <div className="cart-summary">
                             <span className="price">₦{item.price}</span>
-                            <span className="amount">x {item.amount}</span>
+                            <span className="quantity">x {item.quantity}</span>
                           </div>
                         </div>
                         <div>
@@ -132,8 +132,8 @@ const Cart = ({ onchange }) => {
                     ))}
                   </ul>
                   <div className="d-flex justify-content-between fw-bold fs-4">
-                    <span>Total Amount</span>
-                    <span>₦{cartCtx.totalAmount}</span>
+                    <span>Total quantity</span>
+                    <span>₦{cartCtx.totalQuantity}</span>
                   </div>
                   {checkOut && (
                     <Checkout
