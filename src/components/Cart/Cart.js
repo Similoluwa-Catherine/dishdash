@@ -132,7 +132,7 @@ const Cart = ({ onchange }) => {
                     ))}
                   </ul>
                   <div className="d-flex justify-content-between fw-bold fs-4">
-                    <span>Total quantity</span>
+                    <span>Total</span>
                     <span>₦{cartCtx.totalQuantity}</span>
                   </div>
                   {checkOut && (
